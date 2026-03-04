@@ -42,10 +42,10 @@ Kumari Cinemas is a cinema management system that allows users to browse movies,
 ### Step 1: Database Setup
 1. Install Oracle Database XE
 2. Create a new user/schema: KUMARI_MOVIES with password KUMARI123
-3. Execute the final.sql script to create tables and sample data:
+3. Execute the kumartisql.sql script to create tables and sample data:
    ```sql
    CONNECT KUMARI_MOVIES/KUMARI123@localhost:1521/xe;
-   @final.sql;
+   @kumarisql.sql;
    ```
 
 ### Step 2: Application Configuration
