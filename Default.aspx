@@ -205,6 +205,29 @@ CodeBehind="Default.aspx.cs" Inherits="kumari._Default" %>
             </div>
         </div>
 
+        <!-- Centered row for About Us and Contact cards -->
+        <div class="row g-3 justify-content-center">
+            <div class="col-md-4">
+                <div class="card nav-card">
+                    <div class="card-body">
+                        <h5 class="card-title">About Us</h5>
+                        <p class="card-text">Learn more about Kumari Cinemas</p>
+                        <asp:LinkButton runat="server" PostBackUrl="About.aspx" CssClass="btn btn-dark">Go to About</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card nav-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact</h5>
+                        <p class="card-text">Get in touch with Kumari Cinemas</p>
+                        <asp:LinkButton runat="server" PostBackUrl="Contact.aspx" CssClass="btn btn-dark">Go to Contact</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </asp:Content>
