@@ -14,7 +14,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+    
     <style>
         /* Layout wrapper */
         .page-container {
@@ -37,6 +37,39 @@
             margin: 0;
             text-align: center;        
             font-size: 0.95rem;
+        }
+
+        /* Dropdown styling */
+        .navbar .dropdown-menu {
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #212529;
+        }
+
+        .navbar .dropdown-item {
+            color: #adb5bd;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .dropdown-item:hover {
+            background-color: #495057;
+            color: #ffffff;
+        }
+
+        .navbar .dropdown-item.active,
+        .navbar .dropdown-item:active {
+            background-color: #0d6efd;
+            color: #ffffff;
+        }
+
+        .navbar-dark .navbar-nav .dropdown-toggle {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .navbar-dark .navbar-nav .dropdown-toggle:hover,
+        .navbar-dark .navbar-nav .dropdown-toggle[aria-expanded="true"] {
+            color: rgba(255, 255, 255, 0.75);
         }
     </style>
 </head>
@@ -71,14 +104,41 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Default.aspx">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/MovieDetails.aspx">Movie Details</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/UserDetails.aspx">User Details</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/TheaterCityHall.aspx">Theater City Hall</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ShowtimeDetails.aspx">Showtime Details</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/TicketDetails.aspx">Ticket Details</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/UserTicketReport.aspx">User Ticket Report</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/TheaterCityHallMovie.aspx">Theater City Hall Movie</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/MovieOccupancyReport.aspx">Movie Occupancy Report</a></li>
+                        
+                        <!-- Simple WebForms Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="simpleWebFormsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Simple WebForms
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="simpleWebFormsDropdown">
+                                <li><a class="dropdown-item" href="MovieDetails.aspx">Movie Details</a></li>
+                                <li><a class="dropdown-item" href="UserDetails.aspx">User Details</a></li>
+                                <li><a class="dropdown-item" href="TheaterCityHall.aspx">Theater City Hall</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Complex WebForms Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="complexWebFormsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Complex WebForms
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="complexWebFormsDropdown">
+                                <li><a class="dropdown-item" href="ShowtimeDetails.aspx">Showtime Details</a></li>
+                                <li><a class="dropdown-item" href="TicketDetails.aspx">Ticket Details</a></li>
+                                <li><a class="dropdown-item" href="TheaterCityHallMovie.aspx">Theater City Hall Movie</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Reports Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="reportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reports
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="reportsDropdown">
+                                <li><a class="dropdown-item" href="UserTicketReport.aspx">User Ticket Report</a></li>
+                                <li><a class="dropdown-item" href="MovieOccupancyReport.aspx">Movie Occupancy Report</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -94,7 +154,7 @@
     </form>
 
     <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>
     </asp:PlaceHolder>
 </body>
 </html>

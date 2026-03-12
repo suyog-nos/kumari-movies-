@@ -98,7 +98,7 @@ namespace kumari
                         ddlSeat.Items.Add(new ListItem("-- Select Seat (Select Showtime First) --", "0"));
                         while (reader.Read())
                         {
-                            string displayText = $"{reader["seat_id"]} - {reader["hall_name"]} ({reader["seat_label"]})";
+                            string displayText = $"{reader["hall_name"]} - Seat {reader["seat_label"]}";
                             ddlSeat.Items.Add(new ListItem(displayText, reader["seat_id"].ToString()));
                         }
                     }
